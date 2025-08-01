@@ -11,8 +11,8 @@ from glob import glob
 from config import SearchConfig
 
 class VectorSearch:
-    def __init__(self, model_name='all-MiniLM-L6-v2'):
-        self.model = SentenceTransformer(model_name)
+    def __init__(self):
+        self.model = SentenceTransformer('all-MiniLM-L6-v2')
         self.index = None
         self.texts = []
     
