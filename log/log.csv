@@ -1,5 +1,0 @@
-datetime,student,question,intent,is_distressed
-2025-08-02T09:12:45Z,student_001,"When is the final exam for AI 101?",Exam Details,False
-2025-08-01T14:23:11Z,student_002,"I’m really struggling to keep up this term",Stress or Burnout,True
-2025-08-02T11:45:00Z,student_003,"Can I get help understanding this assignment?",Assignment Help,False
-2025-08-01T20:01:37Z,student_004,"I feel like no one listens and I’m drowning in work",Mental Health Concerns,True
