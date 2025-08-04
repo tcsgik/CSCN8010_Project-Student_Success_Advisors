@@ -2,6 +2,17 @@ import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
 class IntentClassifier():
+    """
+    Classifies the intent behind a student's query using a fine-tuned BERT model.
+
+    This class loads a pre-trained intent classification model and predicts the most 
+    likely intent category from a predefined list of student-related intents such as 
+    course information or enrollment.
+
+    Methods:
+        predict(text):
+            Returns the predicted intent label for the given text input.
+    """
     def __init__(self, model_path="models/intentClassifier"):
         self.tokenizer = BertTokenizer.from_pretrained(model_path)
         self.model = BertForSequenceClassification.from_pretrained(model_path)
@@ -30,9 +41,3 @@ class IntentClassifier():
             outputs = self.model(**inputs)
             predicted_class_id = outputs.logits.argmax().item()
         return self.labels[predicted_class_id]
-
-
-# intentClassifier = IntentClassifier()
-# print(intentClassifier.predict("Hi, I'm trying to figure out how to pay my tuition fees."))
-# print(intentClassifier.predict("When is the tuition payment deadline"))
-# print(intentClassifier.predict("Are there any upcoming student events"))

@@ -3,6 +3,18 @@ from transformers import BertTokenizer, BertForSequenceClassification
 import torch.nn.functional as F
 
 class EmotionClassifier:
+    """
+    Classifies emotional tone in a given text using a fine-tuned BERT model.
+
+    This class loads a pre-trained emotion classification model (fine-tuned on a subset of 
+    negative emotions) and predicts the most probable emotion label from a fixed list, 
+    if the confidence exceeds a specified threshold.
+
+    Methods:
+        predict(text, threshold=0.9):
+            Returns the predicted emotion label if the model's confidence exceeds the threshold;
+            otherwise, returns None.
+    """
     def __init__(self, model_path="models/emotionClassifier"):
         self.tokenizer = BertTokenizer.from_pretrained(model_path)
         self.model = BertForSequenceClassification.from_pretrained(model_path)
@@ -19,7 +31,3 @@ class EmotionClassifier:
             if prob >= threshold:
                 return label
         return None
-
-# emotionClassifier = EmotionClassifier("models/emotionClassifier")
-# print(emotionClassifier.predict("I feel overwhelmed and not sure if I can keep up this term"))
-# print(emotionClassifier.predict("When is the tuition payment deadline"))

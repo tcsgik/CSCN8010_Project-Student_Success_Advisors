@@ -9,6 +9,22 @@ import pickle
 from glob import glob
 
 class VectorIndexBuilder:
+    """
+    Builds and saves a FAISS vector index from CSV files containing text chunks.
+
+    This class uses the SentenceTransformer model ('all-MiniLM-L6-v2') to generate 
+    dense vector embeddings for textual content extracted from CSV files in data folder.
+    Each CSV is expected to contain 'url', 'chunk_number', and 'content' columns and has name like kb*.csv.
+
+    The resulting embeddings are indexed using FAISS (IndexFlatL2), enabling efficient
+    vector-based semantic search. Both the FAISS index and associated metadata (text and source info)
+    are saved to disk for later retrieval and use.
+
+    Attributes:
+        model (SentenceTransformer): The sentence embedding model.
+        index (faiss.IndexFlatL2): The FAISS index containing vector embeddings.
+        texts (list[dict]): Metadata for each text chunk, used during search.
+    """
     def __init__(self):
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
         self.index = None

@@ -3,6 +3,17 @@ from datetime import datetime
 import os
 
 class InteractionLogger:
+    """
+    Logs chatbot interactions to a CSV file for record-keeping and analysis.
+
+    This class handles the creation and maintenance of a log file that records 
+    student interactions with the chatbot, including timestamp, student ID, 
+    question, predicted intent, and detected emotion.
+
+    Methods:
+        log(student, question, intent, emotion):
+            Appends a new interaction entry to the log file with the current timestamp.
+    """
     def __init__(self, log_file='logs/log.csv'):
         self.log_file = log_file
         # Create the file with headers if it doesn't exist
