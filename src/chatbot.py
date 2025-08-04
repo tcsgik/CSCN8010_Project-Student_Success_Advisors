@@ -7,7 +7,7 @@ from datetime import datetime
 from src.chatbotController import ChatbotController
 
 # Page config
-st.set_page_config(page_title="Conestoga Student Support Chatbot", page_icon="💬")
+st.set_page_config(page_title="Conestoga Student Support Chatbot", page_icon="🤖")
 
 # Hide Streamlit footer
 st.markdown("<style>footer {visibility: hidden;}</style>", unsafe_allow_html=True)

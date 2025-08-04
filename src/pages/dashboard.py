@@ -4,20 +4,25 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+distressed_emotions = ["anger", "sadness", "fear", "disgust"]
 # Load log CSV file
-df = pd.read_csv('./log/log.csv', parse_dates=['datetime'])
-st.title("📊 Chatbot Statistics Dashboard")
+df = pd.read_csv('logs/log.csv', parse_dates=['datetime'])
+df["is_distressed"] = df['emotion'].isin(distressed_emotions)
+st.title("📊 Chatbot Dashboard")
 
 # Intent type distribution map
 st.header("✨ FAQ Intent Type Distribution")
 intent_counts = df['intent'].value_counts()
-
+# Sort values
+intent_counts = intent_counts.sort_values(ascending=False)
+# Create figure
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.bar(intent_counts.index, intent_counts.values, color='skyblue')
-ax.set_xlabel('Intent Type')
-ax.set_ylabel('Count')
-ax.set_xticklabels(intent_counts.index, rotation=0) # Display x-axis labels horizontally
+sns.barplot(x=intent_counts.values, y=intent_counts.index, ax=ax, palette='Blues_d')
+# Labels and title
+ax.set_xlabel('Count')
+ax.set_ylabel('Intent Type')
 ax.set_title('Intent Type Distribution')
+# Layout and display
 plt.tight_layout()
 st.pyplot(fig)
 
@@ -43,6 +48,6 @@ ax3.set_title('Daily Distress Messages Heatmap')
 st.pyplot(fig3)
 
 # Latest trouble information list
-st.header("🚨 Latest Troubling Message")
+st.header("🚨 Latest Troubling Messages")
 distressed = df[df['is_distressed']]
 st.dataframe(distressed[['datetime', 'student', 'question', 'intent']].sort_values('datetime', ascending=False))
