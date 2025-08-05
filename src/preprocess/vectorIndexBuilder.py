@@ -19,11 +19,6 @@ class VectorIndexBuilder:
     The resulting embeddings are indexed using FAISS (IndexFlatL2), enabling efficient
     vector-based semantic search. Both the FAISS index and associated metadata (text and source info)
     are saved to disk for later retrieval and use.
-
-    Attributes:
-        model (SentenceTransformer): The sentence embedding model.
-        index (faiss.IndexFlatL2): The FAISS index containing vector embeddings.
-        texts (list[dict]): Metadata for each text chunk, used during search.
     """
     def __init__(self):
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
