@@ -37,12 +37,16 @@ class ChatbotController:
 
             emotion = emotionPrediction.result()
             intent = intentPrediction.result()
-        # log query
-        self.logger.log('student_123',query,intent,emotion)
+
         # escalate to human agent
         if (emotion is not None and emotion in ["anger", "sadness", "fear", "disgust"]):
+            # log
+            self.logger.log('student_123',query,intent,emotion,"")
             return "I'm really sorry you're feeling this way. You don’t have to go through it alone. Please speak with a Student Success Advisor who can support you. You can book an appointment at <a href='https://collegeportal.edu/ssa-booking'>https://collegeportal.edu/ssa-booking</a> or call us directly at 555-123-4567."
         # get context from knowledge base
         context = self.get_knowledge_base(query)
         # Generate answer
-        return self.answer_generator.generate_answer_with_ollama(context, query)
+        answer = self.answer_generator.generate_answer_with_ollama(context, query)
+        # log
+        self.logger.log('student_123',query,intent,emotion, answer)
+        return answer
