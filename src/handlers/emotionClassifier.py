@@ -21,7 +21,7 @@ class EmotionClassifier:
         self.model.eval()
         self.labels: list = ["sadness", "grief", "fear", "remorse", "disappointment", "nervousness", "embarrassment"]
 
-    def predict(self, text, threshold=0.9):
+    def predict(self, text, threshold=0.85):
         inputs = self.tokenizer(text, return_tensors="pt", truncation=True, padding=True)
         with torch.no_grad():
             outputs = self.model(**inputs)
