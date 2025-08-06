@@ -50,34 +50,3 @@ class ChatbotController:
         # log
         self.logger.log('student_123',query,intent,emotion, answer)
         return answer
-    
-chatbot = ChatbotController()
-
-def answer(question):
-    print (f"{question}\n")
-    answer = chatbot.get_answer(question)
-    print(f"Answer:\n{answer}\n")
-
-questions = [
-    "Hi, I'm trying to figure out how to pay my tuition fees.",
-    # "Thanks. Do I need to pay the full amount at once?",
-    # "How do I make a payment?",
-    # "What happens if I miss a payment?",
-    # "Can I have an extension/ instalment plan of my payment due",
-    # "Why has my payment not been posted to the Student Portal/ Can you confirm my payment",
-    # "How do I pay for a course on Held Enrolment",
-    # "How can apply for scholarship",
-    # "any financial assistance available in Ontario",
-    # "When is the last day to drop a course without penalty",
-    # "Are there any upcoming student events",
-    # "Where can I get help with my resume",
-    # "is there a place I can do yoga",
-    # "How to View my Timetable",
-    # "I can't see my Timetable",
-    # "How do I withdraw from my program",
-    # "How do I change my block or add/drop a course",
-#     "I feel overwhelmed and not sure if I can keep up this term"
-]
-
-for question in questions:
-    answer(question)
