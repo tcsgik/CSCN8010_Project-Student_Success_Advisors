@@ -46,7 +46,7 @@ class ChatbotController:
         # get context from knowledge base
         context = self.get_knowledge_base(query)
         # Generate answer
-        answer = self.answer_generator.generate_answer_with_ollama(context, query)
+        answer = self.answer_generator.generate_answer_with_openai(context, query)
         # log
         self.logger.log('student_123',query,intent,emotion, answer)
         return answer

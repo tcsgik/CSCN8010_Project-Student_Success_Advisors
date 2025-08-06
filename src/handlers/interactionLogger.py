@@ -20,7 +20,7 @@ class InteractionLogger:
         if not os.path.exists(self.log_file):
             with open(self.log_file, mode='w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow(['Datetime', 'Student', 'Question', 'Intent', 'Emotion', 'Answer'])
+                writer.writerow(['datetime', 'student', 'question', 'intent', 'emotion', 'answer'])
 
     def log(self, student, question, intent, emotion, answer):
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

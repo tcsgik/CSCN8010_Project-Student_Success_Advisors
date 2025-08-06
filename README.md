@@ -15,6 +15,7 @@ Student Success Advisors (SSAs) are currently overwhelmed by low-complexity, hig
 * kb2.csv: Content from the Student Success Portal website.
 * kb2.csv: Content from Student_Fees_FQA_Winter_2024.pdf and RO_FQA_Winter_2024.pdf.
 * student_queries.csv: synthetic dataset to train the intent classifier model.
+* GoEmotions dataset from Hugging Face 🤗 Datasets library.
 
 ## Setup
 

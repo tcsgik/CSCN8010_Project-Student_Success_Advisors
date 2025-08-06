@@ -1,0 +1,37 @@
+datetime,student,question,intent,emotion,answer
+2025-08-06 08:58:31,student_123,"Hi, I'm trying to figure out how to pay my tuition fees.",Tuition/Fees Inquiry,,"You have several options to pay your tuition fees:
+
+1. Student Portal: You can make a payment directly in the Student Portal under the Financial tab, then select Program Fees Payment. This accepts credit card and is the fastest payment method.
+
+2. Web Banking: You can make a payment directly through your Mobile Banking App by adding College College as a payee and using your Student ID as the account number.
+
+3. Flywire or Convera (for international funds): Information can be found on the college's website under International > Apply to College > Fees and payment > Payment options.
+
+Please note that all payments must be received and posted on the Student Portal by the fee due date for each term. Consider processing times to ensure the payments are received on or before the due date - allow 24 hours for payments through the Student Portal and 3-5 business days for web banking and international payment methods."
+2025-08-06 09:02:46,student_123,"Hi, I'm trying to figure out how to pay my tuition fees.",Tuition/Fees Inquiry,,"You have several options to pay your tuition fees:
+
+1. Student Portal: You can make a payment directly in the Student Portal under the Financial > Program Fees Payment section. This method accepts credit card and is the fastest payment method.
+
+2. Web Banking: You can make a payment directly through your Mobile Banking App by adding College College as a payee and using your Student ID as the account number.
+
+3. Flywire or Convera (for international funds): Information for these methods can be found on the college's website under the International > Apply to College > Fees and payment > Payment options section.
+
+Remember to allow for processing times to ensure your payments are received on or before the due date. Allow 24 hours for payments through the Student Portal and 3-5 business days for web banking and international payment methods."
+2025-08-06 09:18:53,student_123,"Hi, I'm trying to figure out how to pay my tuition fees.",Tuition/Fees Inquiry,,"You have several options to pay your tuition fees:
+
+1. Student Portal: You can make a payment directly in the Student Portal. Go to the Financial tab and select Program Fees Payment. This accepts credit card and is the fastest payment method.
+
+2. Web Banking: You can make a payment directly through your Mobile Banking App by adding College College as a payee and using your Student ID as the account number.
+
+3. Flywire or Convera (international funds): If you are an international student, you can find information about these payment methods on the college's website under International > Apply to College > Fees and payment > Payment options.
+
+Please note that all payments must be received and posted on the Student Portal by the fee due date for each term. Allow 24 hours for payments through the Student Portal and 3-5 business days for web banking and international payment methods."
+2025-08-06 09:19:09,student_123,do you have AI programs,Course Information,,"Yes, there are several AI-related courses and programs available. These include the Artificial Intelligence Programming & AI Design course, the Technical Art DMED2060 course, the Advanced Topics in Artificial Intelligence and Machine Learning PROG74040 course, the Applications of Artificial Intelligence and Machine Learning PROG74000 course, the Artificial Intelligence Algorithms and Mathematics CSCN8000 course, and the Foundations of Machine Learning Frameworks CSCN8010 course."
+2025-08-06 09:19:36,student_123,tell me more about Artificial Intelligence Algorithms and Mathematics CSCN8000 course,Course Information,,"The Artificial Intelligence Algorithms and Mathematics CSCN8000 course introduces students to the mathematical foundations behind Artificial Intelligence. It provides context around the development and evolution of AI algorithms throughout history, including an overview of Game Theory. The course has a duration of 42 hours and is worth 3 credits. There are no pre-requisites or co-requisites for this course. There are also no costs associated with required texts or learning resources for this course."
+2025-08-06 09:20:37,student_123,how about the Applications of Artificial Intelligence and Machine Learning PROG74000 course,Course Information,,"The Applications of Artificial Intelligence and Machine Learning PROG74000 course explores Artificial Intelligence, Machine Learning, and Deep Learning, emphasizing practical applications across industries. Starting with foundational concepts, students critically analyze the machine-learning pipeline and delve into traditional machine-learning approaches and key algorithms. The course examines models suited for tabular data, neural networks, and advanced models, such as U-Nets and Convolutional Neural Networks (CNNs), focusing on computer vision and object detection."
+2025-08-06 09:22:55,student_123,how about Applied Artificial Intelligence & Machine Learning,Course Information,,"Sorry, I'm not sure about that."
+2025-08-06 09:24:14,student_123,tell me more about Applied Artificial Intelligence & Machine Learning program,Course Information,,"The Applied Artificial Intelligence and Machine Learning program is a one-year Ontario College Graduate Certificate program. It is designed to prepare students with the specialized knowledge and skills to create machine learning applications and power new solutions for business. The program combines theory, case studies, and hands-on learning to develop knowledge and skills in machine learning frameworks, data analysis, algorithms, data modeling, and artificial intelligence. 
+
+Students will use strong analytical and problem-solving skills to create automated workflows and design successful technology stacks using agile and rapid application development methodologies. The program also involves the development of software solutions that incorporate Artificial Intelligence and Machine Learning technologies. Students will learn to evaluate the effectiveness and suitability of Artificial Intelligence and Machine Learning algorithms and programming languages, analyze project requirements, design prototype solutions, and assess the effectiveness of these solutions. 
+
+The program also emphasizes communication skills, as students will need to communicate effectively to a variety of stakeholders as part of a software development team. The program is designed to advance existing software development skills with real-world projects designed by the college's experienced faculty and researchers."
