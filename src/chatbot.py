@@ -28,6 +28,7 @@ st.title("📚 Student Support Chatbot")
 # Initialize chatbot
 if "chatbot" not in st.session_state:
     st.session_state.chatbot = ChatbotController()
+    st.session_state.chatbot.get_answer("hello")
 
 # Initialize history
 if "history" not in st.session_state:

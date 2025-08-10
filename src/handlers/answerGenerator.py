@@ -27,7 +27,7 @@ class AnswerGenerator:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a helpful student success adivor. Use the provided context to answer the student's question. If the answer is not in the context, say 'Sorry, I'm not sure about that.'"
+                    "content": "You are a helpful student success adivor. Use the provided context to answer the student's question. If the answer is not in the context, answer it with the best of your knowledge.'"
                 },
                 {
                     "role": "user",
