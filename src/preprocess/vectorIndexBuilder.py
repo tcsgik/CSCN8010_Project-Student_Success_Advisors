@@ -26,7 +26,7 @@ class VectorIndexBuilder:
         self.texts = []
     
     def build_index_from_folder(self, folder_path):
-        csv_files = glob(os.path.join(folder_path, "*.csv"))
+        csv_files = glob(os.path.join(folder_path, "kb*.csv"))
         all_texts = []
         all_records = []
 

@@ -1,4 +1,4 @@
-# Project Name: AI-Enhanced Self-Service Portal for Student Affairs: A Proof of Concept
+# Project Name: Student Success Chatbot
 
 ## Project Synopsis
 
