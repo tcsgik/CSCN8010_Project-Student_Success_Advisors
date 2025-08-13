@@ -21,7 +21,7 @@ class AnswerGenerator:
         api_key = os.getenv("OPENAI_API_KEY")
         self.client = OpenAI(api_key=api_key)
 
-    def generate_answer_with_openai(self, context: str, question: str, model: str = "gpt-4") -> str:
+    def generate_answer_with_openai(self, context: str, question: str, model: str = "gpt-4o-mini") -> str:
         response = self.client.chat.completions.create(
             model=model,
             messages=[

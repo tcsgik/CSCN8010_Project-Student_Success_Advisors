@@ -4,6 +4,7 @@ from src.handlers.intentClassifier import IntentClassifier
 from src.handlers.interactionLogger import InteractionLogger
 from src.handlers.searchEngine import FaissSearchEngine
 import concurrent.futures
+import threading
 
 class ChatbotController:
     """
@@ -21,22 +22,20 @@ class ChatbotController:
         self.answer_generator = AnswerGenerator()
         self.vector_search = FaissSearchEngine()
         self.logger = InteractionLogger()
+        self.executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
 
     def get_knowledge_base(self, query):
-        kbResults = self.vector_search.search(query, top_k=10)
+        kbResults = self.vector_search.search(query, top_k=6)
         # Combine top-k chunks into a single context string
         context = "\n\n".join([f"{chunk['content']}" for chunk, _ in kbResults])
-        if len(context) > 10000:
-            context = context[:10000]
+        if len(context) > 3000:
+            context = context[:3000]
         return context
 
     def get_answer(self, query):
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            emotionPrediction = executor.submit(self.emotionClassifier.predict, query)
-            intentPrediction = executor.submit(self.intentClassifier.predict, query)
-
-            emotion = emotionPrediction.result()
-            intent = intentPrediction.result()
+        emotion, intent = self.executor.map(
+            lambda clf: clf.predict(query),
+            (self.emotionClassifier, self.intentClassifier))
 
         # escalate to human agent
         if (emotion is not None and emotion in ["anger", "sadness", "fear", "disgust"]):
@@ -47,6 +46,11 @@ class ChatbotController:
         context = self.get_knowledge_base(query)
         # Generate answer
         answer = self.answer_generator.generate_answer_with_openai(context, query)
-        # log
-        self.logger.log('student_123',query,intent,emotion, answer)
+        # Run logging in a separate thread
+        threading.Thread(
+            target=self.logger.log,
+            args=('student_123', query, intent, emotion, answer),
+            daemon=True
+        ).start()
+        
         return answer

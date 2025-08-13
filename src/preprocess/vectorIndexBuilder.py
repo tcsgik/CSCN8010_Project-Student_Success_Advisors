@@ -10,7 +10,11 @@ from glob import glob
 
 class VectorIndexBuilder:
     """
-    Builds and saves a FAISS vector index from CSV files containing text chunks.
+    Builds and saves a FAISS (Facebook AI Similarity Search) vector index from CSV files containing text chunks.
+
+    Facebook AI Similarity Search, is an open-source library for efficient similarity search and clustering of 
+    dense vectors. It's designed to handle large datasets of vectors, even those that might not fit entirely in 
+    memory, and offers both CPU and GPU implementations for various indexing methods. 
 
     This class uses the SentenceTransformer model ('all-MiniLM-L6-v2') to generate 
     dense vector embeddings for textual content extracted from CSV files in data folder.
